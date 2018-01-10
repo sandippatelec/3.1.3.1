@@ -1,0 +1,251 @@
+
+1)  consumer mode change. previous consumer mode will be added
+
+3)   lcd init in consumer mode in while  function
+4)   dump mode function completed and access of all switch
+5)   eeprom initilization time franchise paasword by defualt set
+6)  eeprom initilization time admin paasword by defualt set
+7) 2016 into 20%.2d for creating a folder accroding to year 
+8) if RTC  value sd_year =2000 so value will be set to 2016
+
+9)change from _underscore to dash(-) and add (/) in string. examples are following
+
+2016_07_22 13:46:29 RA05,d,1111111111,1.0.0,20,050,000,0.00,0.000,0.00,0,25,ERR,0000,80,0,1,0,0,1,0,0,0,0,5627,4510#$%
+2016-07-22 13:46:29/RA05,d,1111111111,1.0.0,20,050,000,0.00,0.000,0.00,0,25,ERR,0000,80,0,1,0,0,1,0,0,0,0,5627,4510#$%
+
+10) every 7 second system_error_check funtion call. and after exit sytem_error = error_free write and previous mode updated.
+
+11) dispense trail =0 in consumer shift into if condition. if outflow_count>25 then only dispense trail =0 set.
+
+12) in school mode or corporate mode	//temp_ptr_1=0; temp_ptr_2=0;  //3.0.1 for testing	//temp_ptr_1=0; temp_ptr_2=0; 
+
+13) antenna mode update.
+
+14) 	serial_string_send("AT+CMGS=\"+91");    to     serial_string_send("AT+CMGS=\"+"); change in sens_sms()
+
+15)  change scan 1   to  scan 1  ok,   .......  scan2  to  scan2 ok
+
+16) I added delete  msg first and after that  server syn function works.
+17) updated (case SER_REQ_DAILY_DISPENSE)
+18) case ST_BUTTON_PRESS update and change for corporate mode
+19) change in corporate mode. still remain
+
+20)  PREV_YEAR added in eeprom memory.
+
+21) sd_sec & 0x7f , discard last bit=0 (ch bit )(for oscilltor on) and write  bit into ds1307
+
+22) covert BAL to  BL in lcd display in consumer mode
+
+23) limit set max 999 to add balance
+
+24) time get from modem  and send to rtc, between this delay was remove.
+
+25) MAX_BALANCE_LIMIT change to 999 (old value 500)
+
+26 )//sd_pointer =FSfopen (file_name,FS_APPENDPLUS);	//timer2_ms_delay(sd_delay);
+
+	sd_pointer = FSfopen(file_name,FS_READPLUS); from balance add via mobile
+
+27) sd_flags.newfile_create variable remove.
+
+28) if card already add. and user want to add again registred card, so add card discarded.  only new card wii bw added in add card function 
+
+29) send server response after server_sync_2() function camcelled becaused already data send in function (particular date and final sync).
+
+29) single date send to syetem and sync particular data on server ...........running
+
+30) case DEV_TIME_SYNC_BY_MODEM:  YYYYMMDD,HHMMSS  change to  YYYYMMDDHHMMSS
+
+31) previous_bal_array[10] add for balance add protocol ... to show both enter new recharge amount(%.3d  3 digit) and updated balance(%3.2f).
+
+32) check every 3 hour time from modem and rtc and find the diff between. (if greater than 5 minute and time is between 1 to 4 pm) then update modem time into RTC
+
+33) temp_val varable name change to temp_user_enter_val.  and (temp_user_balance_2 to temp_user_previous_bal)
+
+
+34) data validation -->  a) SER_MENU_PASSWORD_SET   (onl4 4 digit accepted.)
+			 b) Server IP and Server port and Server APN
+                         c) offline water tariff (range 5 to 5000)
+                         d) SER_TDS_MIN
+                         e) SER_TDS_MAX
+			 f) SER_LLS_HLS_EN_DIS 
+                         g) SER_SCHOOL_MODE_ACC_ID
+                         h) SER_OUT_FLOW_FREQ_LIMIT
+			 i) SER_IN_FLOW_FREQ_LIMIT
+			 j) SER_CORPORATE_MODE_ACC_ID
+35) super admin mode server data updated .
+
+36) add card function change with 50t rs. to 0rs. balance 
+37) blank screen soltuin in basic add card , add balance , remove card .
+
+38) change user_value function. add time out.
+	a) time out add in add balaance, password enter,calibration function
+
+39) SUPER ADMIN Mode updated. and reset all reset mode flag write into eeprom
+40) problem :daily total dispense overwrite in consumer mode. so it will be fixed.
+
+41) remove card function updated 
+42) scrolling functio continuoas move.
+
+43) update timer_out in all function call in menu scolling at each stage.
+
+44) current date and previous date file make in folder (TOTAL). 
+45) current data copy into previous data when data change. 
+
+46)daily_dispense_data function add in scrolling menu. (display previous date and current date dispench data)
+
+47) changes in update_analog_peripheral 
+	else if((adc_reading_counter==0)&&(tds_array[AVG_READING_TDS]!=0))
+				previous_result = tds_array[AVG_READING_TDS];
+
+                         to
+	else if((adc_reading_counter==0)&&(tds_array[AVG_READING_TDS-1]!=0))
+				previous_result = tds_array[AVG_READING_TDS-1];
+
+48) timer_flags.system_error_check,  timer_flags.mode_refresh_check flag new added.
+.
+49) menu_franchise_password change from 1123  to 1234. (17/10)
+
+50) change in get_modem_local_time and find coorection when data of updated date send to server in hex. so it was fixed. (14/11/16)
+
+51)  when system restart...take second in sec_time_stamp and after some second, check second will update or not
+     if second not update goto time sync function
+52) when take time from modem and load into rtc, that time second will be write 59 forcefully into rtc.
+
+53) check_RTC_time function create. it will run on system restart and on every three hour.
+
+54) Locat_time_stamp array updated in get_modem_local_time function.
+
+55) remove all variable of battery ans ASC712 related.
+
+56) sensor_detect_timestamp, sensor_detect both remove due to no used in firmware in school and corporate mode.
+    for this menu_flags.any_button_press we have to used.  (28/11)
+
+57) button_detect == MENU_DETECT to menu_flags.dispense_button =1;  (28/11)
+
+58) modem_get_local_time function fully modified. and check when no modem, valuetake from eeprom
+
+59) daily dispense message function update and get data from cur_date.txt and send to the msg number nad delete the all data if 
+    same master and sender contact are same.
+62) sms_check on first 5 postion check flag enable  gsm_flags.scan_sms
+
+59) ISR (menu button) and (any press button) updated
+
+60) menu_flags.dispense_button to consumer_flags.dispense_button (big change ) 13/12/16
+
+61) traps file added.
+62) update case TXN_MSG:->if(rfid_to_server_msg==DEV_BALANCE_DEDUCT) condition
+
+63) previous mode activated after server sync and particular date sync
+
+64) total dispense litre in school mode, also write in cur_date.txt file when send protocol(log).  16/12/16
+
+65) read_temperature(); function in consumer mode to update temp in run time. 16/12/16
+
+
+
+66) data_validation updated and eeprom file updated (SER_SLEEP_MODE_FLAG case comment on read and write in eeprom) also discard sleep mode msg in modem.c
+
+67) consumer_flags.rfid_read updates in card_detect and consumer mode function .  22/12/16
+
+68) debug_mode enable. and home button pressed that time interrupt occurs and consumer_flag.dispense_button =1
+	in debug mode, when card detect it will display on (DEBUG MODE ON). /17/01/17
+
+69 ) auto_sync falg added. and when this enbale and data change flag =1 then server sync start.
+
+70) In School mode,sch_time_stamp = timer2_tick   chenged to sch_time_stamp =sec_tick
+
+71)  // if((sec_tick - sch_time_stamp)>=(dispense_timeout*1000))		//v2.2.3  //timer2_tick -sch_time_stamp
+               to 
+		if((sec_tick - sch_time_stamp)>=((dispense_timeout*2)*((int)sch_disp_fraction)) )//
+		explanation : if sch_disp_fraction =1 litre and dispense_timeout =15 so total time 30sec
+					if sch_disp_fraction =  3 litre and dispense_timeout =15 so total time 90 sec
+					if sch_disp_fraction =  5 litre and dispense_timeout =15 so total time 150 sec
+72 ) else if(((timer2_tick - sch_time_stamp)>=1500)&&(consumer_flags.output_flow_sensed==FALSE))
+               to 
+     else if(((timer2_tick - sch_time_stamp)>=2)&&(consumer_flags.output_flow_sensed==FALSE))
+
+73) rfid_card_detection = high uptill he comes into the consumer mode.	 
+73) Change in  rfid_read_purse() function , read balance property change.
+
+74) change temp_cntr to loc_temp_var in communication.c (server_sync_function) //12/04/17
+
+75) add in server.c in connection_fail_check() 3rd line
+      memset(local_buffer,'\0',sizeof(local_buffer)); 
+	   and char local_buffer[10] = {0}; to char local_buffer[12] = {0}; //12/04/17
+
+76) void Server_Sync_2(unsigned char file_search,unsigned char data_send_to_sdcard);
+                             to 
+
+void Server_Sync_2(unsigned char file_search,unsigned char data_send_to_server); //13/04/17
+
+78)  Server_Sync_2(SEARCH_PEn,FILE_SEND_EN);  chaneg to Server_Sync_2(SEARCH_ERR,FILE_SEND_EN); 
+     in case SER_SYNC_ERR_FILE: in modem.c
+	 
+79)    add lines in server_sync_2 function-->> 
+					else if((file_open_var==1) && (strncmp(file_status_1,"ERR",3)==0)) //neeedtocheck10
+					{	
+						strcpy(lcd_data,"FILE WRITE SYNC");	lcd_display(1);	
+						strcpy(file_status_2,"SYN");									
+					}	
+80) //if((sec_tick - sch_time_stamp)>=((dispense_timeout*2)*((int)sch_disp_fraction)) )		//needtocheck 
+	                      	change to 
+	if((sec_tick - sch_time_stamp)>=((int)((dispense_timeout*2)*sch_disp_fraction)) )
+
+81) Read school and corporate account id forcefully on system start.----17/05/17	
+82) changes in  school mode setting. (secreen display succesfully).
+83)  change in device information function . (dispaly text correction in TDS CALI.OFF)
+84) change in min paisa amount check when card scan. before is >49 check, then now we check (offline_water_tariff*2) paisa
+    reuired (means min 2 litre dispense amout required).  ---19/05/17
+	
+85) strcpy(lcd_data,"TO RETRIVE BAL. ");  to strcpy(lcd_data,"TO UPDATE BAL. ");  //22/05
+86) add confirmation in  when ask to second time scan  and update baalnce, that time if we press 
+    menu button to duscard tie out, give confirmation 
+87) change string on dispaly for card scan im add ,remove, balance and consumer mode.
+88) chnage in school_mode case in modem.c , blank the school_mode_acc_id before fill the id from msg. -23/05/17
+
+---- 26/05/17
+
+89) 	sprintf(acc_credit_array,"%3.2f",curnt_user_bal_rs);		
+               convert into	
+        sprintf(acc_credit_array,"%3.2f",(double)curnt_user_bal_rs); in many space  --26/05/17
+90) Rfid_user_bal_paisa =   temp_user_enter_val*100;
+                         convert into
+	Rfid_user_bal_paisa = (unsigned long int)(temp_user_enter_val*100);	 	
+91) if((rtc_flag.date_change==1
+                        convert into
+	if((rtc_flag.date_change==1)&&(consumer_flags.card_detect==LOW) && (consumer_flags.coin_read==LOW))	
+	
+	ST_RTC_TIME_CHECK
+	ST_DATE_CHANGE
+	ST_BUTTON_PRESSED
+91-b) in_flow_calibration limit change 5  to 5000
+      Out_flow_calibration Limit Change 5 to 5000
+--30/05/17	
+92) if(peripheral_flags.coin_en_dis){coinbox_disable();} else {}
+     card_detection();
+				to 
+	if(peripheral_flags.coin_en_dis){coinbox_disable();} else {}
+	card_detection();
+	if(mode_flags.op_mode != CONSUMER_MODE)
+	{
+		coinbox_enable();
+	}else{}
+93)  coin_flags.coinprocess=FALSE; after coin_response_check(RECEIVE_COIN);
+      and before   if(coin_flags.coinselect==TRUE)		
+94) if(mode_flags.op_coin_mode){		
+           coin_flags.coinselect=FALSE;   add this line in consumer mode.
+		   dueto coin process complete.this coin_flags.coinselect should be zero,for when card scan , it required this coin_flags.coinselect =0      --30/05/17
+
+--31/05/17
+95) P_yr=16;   to P_yr=17;  in variable_init().   
+
+96) unsigned int temp_user_enter_val to unsigned long int temp_user_enter_val		
+
+97) strcpy(lcd_data,"FACTORY PASSWORD:"); to strcpy(lcd_data,"FACTORY PASSWORD");    
+    strcpy(lcd_data,"DISPENSE TIMEOUT:"); to strcpy(lcd_data,"DISPENSE TIMEOUT"); 
+	strcpy(lcd_data,"CLEANING TIMEOUT:"); to strcpy(lcd_data,"CLEANING TIMEOUT");
+	strcpy(lcd_data,"WATER NOT EXPIRED"); to strcpy(lcd_data,"NO WATER EXPIRED");
+	strcpy(lcd_data,"TEMP. COMPENSATION");to strcpy(lcd_data,"TEMP COMPENSE   ");
+	strcpy(lcd_data,"COIN COLLECTOR ERROR:"); to strcpy(lcd_data,"COIN COLLECT ERR");
+	strcpy(lcd_data,"IMPROPER RFID NO.");  to strcpy(lcd_data,"IMPROPER RFID NO"); 

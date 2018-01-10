@@ -1,0 +1,48 @@
+
+1) SD card detection when sd card extract while runnung
+2) sd card protection
+3) RTC proble solution
+
+
+
+
+
+RAMAINING THING
+
+1) when  RTC time set??
+
+2) when put data validation
+
+2) if add balance add via sms, so notification wiill be send on server or mobile??
+
+4) data sync log store (send) on sd card or server when sync completed
+
+
+1) add user add remove and add balance lcd light off . change it 
+2) super admin mode protocol date change
+3) 4 digit balance wii be used to display
+4) RL33 prtocol add in firmware
+5) fs in 5 minute change
+
+6) add user and remove and after add .. problem in it?
+7) when RTC reset all log is append everytime. when sync data .all data send again from first log to last log. 
+8) logout display not proper.
+8) function end. last msg displayed and lcd backlight off. comes in idle conditon take some time. (manage backlight and msg  between this time).
+
+OK9) some time sd card . rfid card detect problem occured. after remove and add card again.
+
+OK 10) DE 8 comes again and again
+
+11) data error stack not open 
+
+12) server fail try and exit . when data sync
+
+13) when data sync file open and send. suddenly server fail and function exit . that time file closed or not??
+
+14) required maintannce check
+15)school and corporate mode check.
+
+16) daily dispense function change
+
+18) need optimization in coding. (like remove all variable  which is not used.
+

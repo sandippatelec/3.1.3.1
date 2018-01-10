@@ -1,0 +1,20 @@
+build/default/production/FSIO.o:  \
+FSIO.c  \
+Compiler.h  \
+FSIO.h  \
+ GenericTypeDefs.h  \
+FSconfig.h  \
+HardwareProfile.h  \
+uart2.h  \
+FSDefs.h  \
+SD-SPI.h  \
+ variable.h  \
+main.h  \
+DS1307.h  \
+server.h  \
+communicate.h  \
+peripherial.h  \
+ ext_eeprom.h  \
+serial_uart.h  \
+mcu_adc.h  \
+YHY502.h 

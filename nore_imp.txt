@@ -1,0 +1,37 @@
+
+search string <disable forcefully school_mode > if enable school mode
+string -> <disable forcefully school_mode >
+
+change in eeprom.c
+change in mode.c -> scrolling_menu
+
+
+#ifdef MODE_EN #endif in data_validation function.  -for comment school and corporate mode.
+
+forcefully eeprom read and write school and corporate enable flag by 0.
+
+if any msg comes no flag and mode will be change.
+
+
+disable follwing case in modem.c 
+case SER_CHILLER_EN_DIS:
+case SER_COLD_TEMPERATURE_LEVEL:
+case SER_CORPORATE_MODE: 
+ase  SER_SCHOOL_MODE: 
+
+
+case SER_COIN_EN_DIS: //v2.2.9
+case SER_COIN_CHN_STATUS: //v2.2.9
+case SER_TOTAL_COIN_AMOUNT: //v2.2.9
+case SER_TOTAL_COIN_COUNT: //v2.2.9
+case SER_COIN_WATER_TARIFF: //v2.2.9	
+case SER_COIN_COLLECT_CAPACITY: //v2.2.9
+case SER_COIN_CHN_EN_DIS: //v2.2.9
+case SER_COIN_ID: //v2.2.9
+case SER_COIN_ID_STATUS: //v2.2.9
+case SER_RESET_COIN_AMOUNT_COUNT: //v2.2.9
+
+
+school_disp_amount = 1000;  change 500 to 1000 for calibration mode dispense 1 litre direct
+
+

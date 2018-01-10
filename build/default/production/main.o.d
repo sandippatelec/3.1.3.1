@@ -1,0 +1,25 @@
+build/default/production/main.o:  \
+main.c  \
+mcu_timer.h  \
+ext_lcd.h  \
+main.h  \
+ FSIO.h  \
+GenericTypeDefs.h  \
+FSconfig.h  \
+Compiler.h  \
+HardwareProfile.h  \
+uart2.h  \
+ FSDefs.h  \
+SD-SPI.h  \
+1wire_temperature.h  \
+serial_uart.h  \
+DS1307.h  \
+mcu_adc.h  \
+ coin_uca2.h  \
+ext_eeprom.h  \
+peripherial.h  \
+mode.h  \
+modem.h  \
+communicate.h  \
+ YHY502.h  \
+server.h 

@@ -1,0 +1,24 @@
+build/default/production/modem.o:  \
+modem.c  \
+main.h  \
+modem.h  \
+variable.h  \
+ FSIO.h  \
+GenericTypeDefs.h  \
+FSconfig.h  \
+Compiler.h  \
+HardwareProfile.h  \
+uart2.h  \
+ FSDefs.h  \
+SD-SPI.h  \
+DS1307.h  \
+serial_uart.h  \
+server.h  \
+mcu_timer.h  \
+ communicate.h  \
+ext_lcd.h  \
+peripherial.h  \
+ext_eeprom.h  \
+coin_uca2.h  \
+mode.h  \
+ 1wire_temperature.h 

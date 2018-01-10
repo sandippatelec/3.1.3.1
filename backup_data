@@ -1,0 +1,9 @@
+                    //sprintf(lcd_data,"%d %d %d %d %d %d %d %d",coin_flags.coinenable,coin_flags.coinidle,coin_flags.coin_receive_process,coin_flags.coinselect,coin_flags.coin_collector_alert,coin_flags.coin_collector_error,consumer_flags.coin_read,coin_flags.coin_disable_by_error);
+                    sprintf(lcd_data,"%s,%d,%d,%d%d%d",temp_value,water_temperature_level,tank_low_level_litre,peripheral_flags.temp_en_dis,peripheral_flags.chiller_heater_en_dis,peripheral_flags.chiller_heater_lls_trigger);
+                   lcd_display(1); 	
+                   // sprintf(lcd_data,"Q= %d %d %d %d",consumer_flags.coin_read,mode_flags.op_mode,total_coin_count,total_coin_amount);
+                    sprintf(lcd_data,"%d%d%d%d%d,%d%d%d,%d,%d",peripheral_flags.chiller_status_flag,peripheral_flags.heater_status_flag,peripheral_flags.warm_water,peripheral_flags.cold_water,peripheral_flags.chiller_heater_start_flag,peripheral_flags.lls_pin,peripheral_flags.lls_processing,peripheral_flags.lls_trigger,(unsigned int)chiller_heater_time_stamp,(unsigned int)min_tick);
+//                  sprintf(lcd_data,"Q= %d %d ",coin_flags.coin_collector_alert,coin_flags.coinidle);
+                  lcd_display(2);
+
+  

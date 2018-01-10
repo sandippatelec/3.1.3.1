@@ -1,0 +1,19 @@
+build/default/production/mcu_timer.o:  \
+mcu_timer.c  \
+serial_uart.h  \
+main.h  \
+ variable.h  \
+FSIO.h  \
+GenericTypeDefs.h  \
+FSconfig.h  \
+Compiler.h  \
+ HardwareProfile.h  \
+uart2.h  \
+FSDefs.h  \
+SD-SPI.h  \
+DS1307.h  \
+mcu_timer.h  \
+ mcu_adc.h  \
+peripherial.h  \
+ext_lcd.h  \
+1wire_temperature.h 

@@ -1,0 +1,23 @@
+build/default/production/1wire_temperature.o:  \
+1wire_temperature.c  \
+ Config.h  \
+main.h  \
+1wire_temperature.h  \
+ext_lcd.h  \
+variable.h  \
+FSIO.h  \
+ GenericTypeDefs.h  \
+FSconfig.h  \
+Compiler.h  \
+HardwareProfile.h  \
+uart2.h  \
+ FSDefs.h  \
+SD-SPI.h  \
+DS1307.h  \
+mcu_timer.h  \
+mcu_adc.h  \
+peripherial.h  \
+ communicate.h  \
+coin_uca2.h  \
+ext_eeprom.h  \
+modem.h 

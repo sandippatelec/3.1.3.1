@@ -1,0 +1,21 @@
+build/default/production/communicate.o:  \
+communicate.c  \
+communicate.h  \
+ main.h  \
+serial_uart.h  \
+variable.h  \
+FSIO.h  \
+GenericTypeDefs.h  \
+FSconfig.h  \
+ Compiler.h  \
+HardwareProfile.h  \
+uart2.h  \
+FSDefs.h  \
+SD-SPI.h  \
+DS1307.h  \
+modem.h  \
+ ext_lcd.h  \
+mode.h  \
+server.h  \
+mcu_timer.h  \
+peripherial.h 

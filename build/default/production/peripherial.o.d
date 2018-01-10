@@ -1,0 +1,19 @@
+build/default/production/peripherial.o:  \
+peripherial.c  \
+serial_uart.h  \
+ main.h  \
+variable.h  \
+FSIO.h  \
+GenericTypeDefs.h  \
+FSconfig.h  \
+Compiler.h  \
+ HardwareProfile.h  \
+uart2.h  \
+FSDefs.h  \
+SD-SPI.h  \
+DS1307.h  \
+peripherial.h  \
+ mcu_timer.h  \
+ext_lcd.h  \
+communicate.h  \
+ext_eeprom.h 
