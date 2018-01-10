@@ -23,7 +23,7 @@ void __attribute__ ((interrupt,no_auto_psv)) _OC1Interrupt(void)
    OC1_Clear_Intr_Status_Bit;
 }
 
-void peripheral_handler(void)
+void peripheral_handler(void) //GIT testing 
 {
 	peripheral_flags.peripheral_interrupt = FALSE;
 //--------LLS Sense
@@ -38,7 +38,7 @@ void peripheral_handler(void)
 	}else{}
 }
 
-void lls_sense_processing(void){    //V2.3.1.c
+void lls_sense_processing(void){    //V2.3.1.c  // GIT testing not confirmed
 	peripheral_flags.lls_pin = LLS_PIN_CHECK;
 	timer2_ms_delay(50);
 	if((peripheral_flags.lls_pin==LOW)&&(peripheral_flags.lls_processing==FALSE) && ((peripheral_flags.lls_last_second_state != TANK_LOW_2))  )    //&&(peripheral_flags.lls_trigger==FALSE))
