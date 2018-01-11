@@ -27,7 +27,7 @@
 // Developed by : Sandip Patel
 // Tested OK
 // Pull testing by cmd
-
+// changes from MPLAB X
 void network_check(void)  // test git cmd
 {
     unsigned char loop = 0; //,count=0;

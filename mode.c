@@ -37,6 +37,8 @@
 //#define TEST_LCD_ON
 #define DEBUG_TEST_ON
 
+// changes from MPLAB X
+
 void card_detection(void)
 {
     //	unsigned char loop=0;  //v3.1.1.C
