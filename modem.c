@@ -23,6 +23,10 @@
 #include "mode.h"
 #include "1wire_temperature.h" //3.1.2.V13
 
+// Modem code 
+// Developed by : Sandip Patel
+// Tested OK
+
 void network_check(void)  // test git cmd
 {
     unsigned char loop = 0; //,count=0;
