@@ -23,7 +23,7 @@
 #include "mode.h"
 #include "1wire_temperature.h" //3.1.2.V13
 
-void network_check(void)
+void network_check(void)  // test git cmd
 {
     unsigned char loop = 0; //,count=0;
     char string_buffer[20] = {0};
