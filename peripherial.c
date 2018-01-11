@@ -104,7 +104,7 @@ void lls_sense_processing(void){    //V2.3.1.c  // GIT testing not confirmed
 	}else{}
 }
 
-void hls_sense_processing(void){
+void hls_sense_processing(void){    // Testing 2
 	peripheral_flags.hls_pin = HLS_PIN_CHECK;
 	timer2_ms_delay(50);  //v3.1.1.F
 	if((peripheral_flags.hls_pin==LOW)&&(peripheral_flags.hls_processing==FALSE)&&(peripheral_flags.hls_trigger==FALSE))
