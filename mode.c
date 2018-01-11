@@ -38,6 +38,7 @@
 #define DEBUG_TEST_ON
 
 // changes from MPLAB X
+// changes acknoledge & replay from bitbbucket editor
 
 void card_detection(void)
 {
