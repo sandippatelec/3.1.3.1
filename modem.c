@@ -26,6 +26,7 @@
 // Modem code 
 // Developed by : Sandip Patel
 // Tested OK
+// Pull testing by cmd
 
 void network_check(void)  // test git cmd
 {
